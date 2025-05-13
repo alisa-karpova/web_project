@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<h2 align="center"><b>{{ title }}</b></h2>
+<br>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.height.label }}<br>
+        {{ form.height(class="form-control") }}<br>
+        {% for error in form.height.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.weight.label }}<br>
+        {{ form.weight(class="form-control") }}<br>
+        {% for error in form.weight.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+        {{ form.weight_slider_value }}
+    </p>
+    <p>
+        {{ form.level.label }}<br>
+        {{ form.level(class="form-control") }}<br>
+        {% for error in form.level.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    <p>
+        {{ form.style.label }}<br>
+        {{ form.style(class="form-control") }}<br>
+        {% for error in form.style.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>{{ form.high_tramps() }} {{ form.high_tramps.label }}</p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    <p>{{ message }}</p>
+</form>
+{% endblock %}

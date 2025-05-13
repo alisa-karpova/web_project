@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body style="background-image: url('/static/img/login_bg.png')"></body>
+<br>
+<h2 align="center" style="color: white">Авторизация</h2>
+<br>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p class=login>
+        {{ form.email.label }}<br>
+        {{ form.email(class="form-control", type="email") }}<br>
+        {% for error in form.email.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endfor %}
+    </p>
+    <p class=login>
+        {{ form.password.label }}<br>
+        {{ form.password(class="form-control", type="password") }}<br>
+        {% for error in form.password.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endfor %}
+    </p>
+    <p class=login style="color: white">{{ form.remember_me() }} {{ form.remember_me.label }}</p><br>
+    <div class="d-grid gap-3 col-1 mx-auto">
+        <p class=login style="color: white">{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    </div>
+    <div style="color: white">{{ message }}</div>
+</form>
+{% endblock %}

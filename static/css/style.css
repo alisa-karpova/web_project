@@ -1,0 +1,29 @@
+.padding {
+    padding: 15px;
+}
+
+p.main {
+    font-size: 27px;
+    text-indent: 30px;
+}
+
+p.register {
+    font-weight: bold;
+    font-size: 19px;
+}
+
+p.login {
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+ol,
+ul {
+    font-size: 27px;
+}
+
+li {
+    padding: 5px;
+    text-align: justify;
+}
